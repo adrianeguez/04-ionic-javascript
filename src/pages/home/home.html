@@ -17,9 +17,16 @@
 
       <ion-item>
         <ion-label floating>Username - {{nombre}}</ion-label>
+
+
         <ion-input [(ngModel)]="nombre"
                    name="nombre"
                    type="text"></ion-input>
+
+
+
+
+
       </ion-item>
 
       <ion-item>
@@ -29,16 +36,31 @@
           <p>pristine:{{passwordFormulario.pristine}}</p>
           <p>dirty:{{passwordFormulario.dirty}}</p>
           <p>untouched:{{passwordFormulario.untouched}}</p>
+          <p>{{passwordFormulario.errors?.required}}</p>
+          <p>{{passwordFormulario.errors?.minlength}}</p>
+          <p>{{passwordFormulario.errors?.maxlength}}</p>
+
+
         </ion-label>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
+
+
         <ion-input type="password"
+                   required
+                   minlength="3"
+                   maxlength="5"
+
+
                    [(ngModel)]="password"
                    name="password"
-                   #passwordFormulario
+                   #passwordFormulario="ngModel"
         ></ion-input>
+
+
+
       </ion-item>
 
     </ion-list>
@@ -47,6 +69,8 @@
             type="submit"
             clear>Enviar datos
     </button>
+
+
 
   </form>
 
