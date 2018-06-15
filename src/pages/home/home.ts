@@ -10,6 +10,7 @@ export class HomePage {
 
   nombre = "Hola";
   password = "";
+  passwordConfirmacion = "";
 
   constructor(public navCtrl: NavController) {
   }
