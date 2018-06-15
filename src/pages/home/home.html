@@ -49,7 +49,17 @@
       &&passwordFormulario.dirty">
         <ion-label>
           <p style="background-color: red;color: white">
-            ERROR
+            ERROR -
+            <span *ngIf="passwordFormulario.errors">
+              Campo requerido
+            </span>
+            <span *ngIf="passwordFormulario.errors">
+              Necesita mas de 3 caracteres
+            </span>
+            <span *ngIf="passwordFormulario.errors">
+              No puede escribir mas de 5 caracteres
+            </span>
+
           </p>
         </ion-label>
       </ion-item>
