@@ -10,12 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {FormsModule} from "@angular/forms";
 import {UsuarioService} from "../servicios/usuario.service";
+import {MotrarUsuarioComponent} from "../componentes/motrar-usuario.component";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MotrarUsuarioComponent
   ],
   imports: [
     BrowserModule,

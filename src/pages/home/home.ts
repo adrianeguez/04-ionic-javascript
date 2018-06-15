@@ -3,7 +3,7 @@ import {NavController, ToastController} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {UsuarioService} from "../../servicios/usuario.service";
 
-@Component({
+  @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
     console.log(this._usuarioService.nombreUsuario);
   }
 
-  
+
   validarFormulario(formulario: NgForm) {
     // console.log(formulario);
     console.log(this._usuarioService.nombreUsuario);
