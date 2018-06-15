@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavController, ToastController} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {UsuarioService} from "../../servicios/usuario.service";
@@ -7,7 +7,7 @@ import {UsuarioService} from "../../servicios/usuario.service";
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   nombre = "Hola";
   password = "";
@@ -20,6 +20,12 @@ export class HomePage {
               private _usuarioService: UsuarioService
   ) {
   }
+
+  ngOnInit() {
+    console.log(this._usuarioService.nombreUsuario);
+  }
+
+  
   validarFormulario(formulario: NgForm) {
     // console.log(formulario);
     console.log(this._usuarioService.nombreUsuario);
