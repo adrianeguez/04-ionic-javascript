@@ -11,6 +11,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {FormsModule} from "@angular/forms";
 import {UsuarioService} from "../servicios/usuario.service";
 import {MotrarUsuarioComponent} from "../componentes/motrar-usuario.component";
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MotrarUsuarioComponent} from "../componentes/motrar-usuario.component";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

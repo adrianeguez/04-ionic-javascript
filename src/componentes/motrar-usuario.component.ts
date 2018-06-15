@@ -16,6 +16,17 @@ export class MotrarUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.nombreUsuario = this._usuarioService.nombreUsuario;
+    this.escucharCambiosNombreUsuario();
+  }
+
+  escucharCambiosNombreUsuario() {
+    this._usuarioService
+      .cambioNombreUsuario
+      .subscribe(
+        (nombreUsuario: string) => {
+          this.nombreUsuario = nombreUsuario;
+        }
+      )
   }
 
 }
