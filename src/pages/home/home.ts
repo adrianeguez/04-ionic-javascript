@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, ToastController} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'page-home',
@@ -15,11 +16,15 @@ export class HomePage {
   posicionToast = 'top';
 
   constructor(public navCtrl: NavController,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              private _usuarioService: UsuarioService
+  ) {
   }
-
   validarFormulario(formulario: NgForm) {
-    console.log(formulario);
+    // console.log(formulario);
+    console.log(this._usuarioService.nombreUsuario);
+    this._usuarioService.nombreUsuario = 'Pepita';
+
     if (formulario.controls.password.value === // form
       this.passwordConfirmacion) { // ngModel
       // OK!
